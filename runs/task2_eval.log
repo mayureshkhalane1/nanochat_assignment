@@ -1,0 +1,67 @@
+2026-09-18 00:12:59,036 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-18 00:12:59,037 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/base_checkpoints/d2 with step 420
+2026-09-18 00:12:59,110 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+Evaluating model: base_model (step 420)
+Eval modes: bpb, sample
+
+================================================================================
+Model Samples
+================================================================================
+
+Conditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>The capital of France is a popular choice for the most popular choice for the most popular choice. The most
+--------------------------------------------------------------------------------
+<|bos|>The chemical symbol of gold is a great way to make a great way to make a great way to make a
+--------------------------------------------------------------------------------
+<|bos|>If yesterday was Friday, then tomorrow will be the first time to be the first time. The first time was the first time
+--------------------------------------------------------------------------------
+<|bos|>The opposite of hot is a great way to make a sense of the hot water. The hot water is
+--------------------------------------------------------------------------------
+<|bos|>The planets of the solar system are: the planets of the planets, the planets, and the planets, the planets,
+--------------------------------------------------------------------------------
+<|bos|>My favorite color is a great way to make a sense of the color of the color of the color
+--------------------------------------------------------------------------------
+<|bos|>If 5*x + 3 = 13, then x is the most common problem with the problem of the problem is that the problem is that
+
+Unconditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>On March 1987, New England Miled Gies Honors: Intro to build a game perfocytes - the spawned must state up and every major part. Most connections enable the function to count in every figure out his main concern—but that Richard Marshall's Peter. Newborn was designed to mobilize or improve sampling of the importance of using artificial intelligence and algorithms in many countries, as well as make prefers to cooperating controlling within the gap between 1986 and 2019RD to join the role of organizing asbestos ergo into action paths later in Ham introduced thousands of hours, reviewer, and get suggested over
+--------------------------------------------------------------------------------
+<|bos|>scientist learn and you have to think about a person or speak in a balanced diet that people choose to take vitamins and minerals.
+Forceful
+If you want to believe you are sorted, they will be done to you, and are, metals, anything we haven't had red on their system.
+Some person, you may be able to do some individuals find families where it may struggle to control how it comes to themselves with your brain, with your skills needed become more flexible. Stay in a proactive way to learn every time. Helping down into their family and has a significant impact on pain with anxiety.
+Nerves of MY
+--------------------------------------------------------------------------------
+<|bos|>Nsody often involve speech talking about eros friction a factor that features to the bass wave line. These natures might have an average of average volume of results but may not cause bass wave line. However, pressure is consistently perceived as well as the installation of smaller size as
+sane-like General questions. The advantages of independent. Early commentary may be noticeable when the high-frequency video displays under advanced gear. This will lead to low-level wafer, forecasts due to its weight loss for details such as pressure, temperature control nighttime temperature range of the transmitter drop cap. These emissions are the same as consuming carbon with 4 handlers may only
+--------------------------------------------------------------------------------
+<|bos|>I ton Vican diving nets and some of the modifications in North Dakota and recent Dodge Caropits were greccame.
+It was ridicul-Ocan drive mobile by the Sharma site and took your guide on your customers. Now there was also a vast collection domain of freshwater stream and ocean. Almost each boat and purchase only to several other types of-water seas, but nothing he signed. The snorkimars will also carry on the behaviors they would immediately drop away, which were less expensive because the diurnal behavior yield, eroded water-producing structures, illustrating how much food has measured, inverse explosions, and here is tailored to be
+--------------------------------------------------------------------------------
+<|bos|>Lecture 09 little?
+The California age is: FORNY
+Meet May 10.000 years – Come to help me. Get King
+
+Usually, all the answer! It's okay to me
+I can't put or run into repeating or wait for you Heidel expends out so favor of people at least 12 years under the last age, but didn't hear it up. Their scientific papers and ease it into the microscopic eye.
+
+The next step in recovery is continually reduced because there should never be notes to smell of knowledge about tomato's flavor. Over time, it probably runs the :
+Reading experience, if it
+--------------------------------------------------------------------------------
+<|bos|>Russian Arab British phrase. Many of the distortions have never played a victory from mealt side and threw some ridiculous torque numbers in with rent, if they were and convinced why correct all cars are contributing to Olympic[ging] not in late spring their car, so there wouldopan (using two BCE dots mark hard wheel racing), mines (1-0 seconds for iron), celon, down hemispindulous tests over the bival for iron components. After which the hometAR can be picked directly for iron's use of it. Combined, rigorous process tests that test engines are required to rate reverses temperature.
+--------------------------------------------------------------------------------
+<|bos|>Bob and Hunters Of Young Years when she affects the kidneys and fibrous sediment, cell membranes. It is not either known as high as it is pastered into the joints containing conjugation each exoskeleton.
+(EWCCT).Digestive nitrogen (12, 75b) delicious, unique base bean, milk, etc. free radicals develop, resulting in a solid chloride, which makes them molecules the carbon. Since its great part of these compounds, keeps molecules, more downstream to the kidney! Experts introductory psychology exercises including the CHCC indicator that improves and in the pulmonary supply of kidneys. It will help with the presence of the fluids,
+--------------------------------------------------------------------------------
+<|bos|>There are some of the most potent Vietnamese dishes offered here again again again, but is very decisions. This is just a few tips for adding: a ingredients overrate the world's players explain how you can get the luck.
+Gain Tool if you have to leave you with them and let them play a role in improving your air quality. Thus, you'll also have started the world with some help you put your opponents in desperate Zone, where you let them have learned good things that will require them to ensure that and you can use metrics.
+Gain Toolvish Ball sets Initialory, upon the simplicity of users!" follow what
+
+================================================================================
+BPB Evaluation
+================================================================================
+train bpb: 1.404148
+val bpb: 1.417485
