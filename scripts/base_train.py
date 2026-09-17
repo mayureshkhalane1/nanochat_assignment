@@ -99,6 +99,8 @@ print0(f"COMPUTE_DTYPE: {COMPUTE_DTYPE} ({COMPUTE_DTYPE_REASON})")
 use_dummy_wandb = args.run == "dummy" or not master_process
 wandb_run = DummyWandb() if use_dummy_wandb else wandb.init(project="nanochat", name=args.run, config=user_config)
 
+
+
 # Flash Attention status
 from nanochat.flash_attention import USE_FA3
 using_fa3 = USE_FA3
@@ -190,6 +192,16 @@ if args.fp8:
         num_fp8 = sum(1 for m in model.modules() if 'Float8' in type(m).__name__)
         num_skipped = num_linear - num_fp8
         print0(f"✓ FP8 training enabled ({args.fp8_recipe} scaling) - converted {num_fp8}/{num_linear} linear layers, skipped {num_skipped} (too small)")
+
+
+class JSONLLogger:
+    def __init__(self, path):
+        self.path = path
+    def log(self, **kwargs):
+        os.makedirs(os.path.dirname(self.path), exist_ok=True)
+        with open(self.path,"a") as f:
+            f.write(json.dumps(kwargs) + "\n")
+json_logger = JSONLLogger(os.path.join(checkpoint_dir, "run.jsonl"))
 
 # Context manager to temporarily disable FP8 so that model evaluation remains in BF16
 @contextmanager
@@ -425,6 +437,11 @@ while True:
         with disable_fp8(model):
             val_bpb = evaluate_bpb(model, val_loader, eval_steps, token_bytes)
         print0(f"Step {step:05d} | Validation bpb: {val_bpb:.6f}")
+        json_logger.log(step=step, type="val", val_bpb=val_bpb,
+                 train_loss=debiased_smooth_loss if step > 0 else None,
+                 total_training_flops=flops_so_far, total_training_time=total_training_time)
+        model.train()
+
         if val_bpb < min_val_bpb:
             min_val_bpb = val_bpb
         wandb_run.log({
@@ -433,7 +450,6 @@ while True:
             "total_training_time": total_training_time,
             "val/bpb": val_bpb,
         })
-        model.train()
 
     # once in a while: estimate the CORE metric (all ranks participate)
     # use the original uncompiled model because the inputs keep changing shape
@@ -566,6 +582,9 @@ while True:
     epoch = f"{dataloader_state_dict['epoch']} pq: {dataloader_state_dict['pq_idx']} rg: {dataloader_state_dict['rg_idx']}"
     print0(f"step {step:05d}/{num_iterations:05d} ({pct_done:.2f}%) | loss: {debiased_smooth_loss:.6f} | lrm: {lrm:.2f} | dt: {dt * 1000:.2f}ms | tok/sec: {tok_per_sec:,} | bf16_mfu: {mfu:.2f} | epoch: {epoch} | total time: {total_training_time/60:.2f}m{eta_str}")
     if step % 100 == 0:
+        json_logger.log(step=step, type="train", train_loss=debiased_smooth_loss,
+                 lrm=lrm, tok_per_sec=tok_per_sec,
+                 total_training_flops=flops_so_far, total_training_time=total_training_time)
         log_data = {
             "step": step,
             "total_training_flops": flops_so_far,
