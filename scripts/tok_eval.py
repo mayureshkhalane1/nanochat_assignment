@@ -183,10 +183,12 @@ for tokenizer_name in ["gpt2", "gpt4", "ours"]:
 
         encoded_bytes = text.encode('utf-8')
         ratio = len(encoded_bytes) / len(encoded)
+        tok_per_char = len(encoded) / len(text)
         tokenizer_results[tokenizer_name][name] = {
             'bytes': len(encoded_bytes),
             'tokens': len(encoded),
-            'ratio': ratio
+            'ratio': ratio,
+            'tok_per_char': tok_per_char
         }
 
 # ANSI color codes
@@ -204,8 +206,8 @@ def print_comparison(baseline_name, baseline_results, ours_results, all_text):
     """Print comparison table between baseline tokenizer and ours."""
     print(f"\nComparison with {baseline_name}:")
     print("=" * 95)
-    print(f"{'Text Type':<10} {'Bytes':<8} {baseline_name:<15} {'Ours':<15} {'Relative':<12} {'Better':<10}")
-    print(f"{'':10} {'':8} {'Tokens':<7} {'Ratio':<7} {'Tokens':<7} {'Ratio':<7} {'Diff %':<12}")
+    print(f"{'Text Type':<10} {'Bytes':<8} {baseline_name:<22} {'Ours':<22} {'Relative':<12} {'Better':<10}")
+    print(f"{'':10} {'':8} {'Tokens':<7} {'Ratio':<7} {'Tok/Char':<7} {'Tokens':<7} {'Ratio':<7} {'Tok/Char':<7} {'Diff %':<12}")
     print("-" * 95)
 
     for name, text in all_text:
@@ -233,8 +235,10 @@ def print_comparison(baseline_name, baseline_results, ours_results, all_text):
         print(f"{name:<10} {baseline_data['bytes']:<8} "
               f"{baseline_color}{baseline_data['tokens']:<7}{RESET} "
               f"{baseline_color}{baseline_data['ratio']:<7.2f}{RESET} "
+              f"{baseline_color}{baseline_data['tok_per_char']:<7.2f}{RESET} "
               f"{ours_color}{ours_data['tokens']:<7}{RESET} "
               f"{ours_color}{ours_data['ratio']:<7.2f}{RESET} "
+              f"{ours_color}{ours_data['tok_per_char']:<7.2f}{RESET} "
               f"{diff_color}{relative_diff:+7.1f}%{RESET}     "
               f"{better:<10}")
 
