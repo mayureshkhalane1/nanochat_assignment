@@ -1,0 +1,12 @@
+2026-09-18 16:19:24,162 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-18 16:19:24,163 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/base_checkpoints/d4 with step 528
+2026-09-18 16:19:24,239 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 4, 'n_head': 2, 'n_kv_head': 2, 'n_embd': 256, 'window_pattern': 'L'}
+Autodetected device type: mps
+Evaluating model: base_model (step 528)
+Eval modes: bpb
+
+================================================================================
+BPB Evaluation
+================================================================================
+train bpb: 1.174963
+val bpb: 1.213344

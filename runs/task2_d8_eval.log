@@ -1,0 +1,78 @@
+2026-09-18 16:18:59,760 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-18 16:18:59,761 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/base_checkpoints/d8 with step 528
+2026-09-18 16:18:59,867 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 8, 'n_head': 4, 'n_kv_head': 4, 'n_embd': 512, 'window_pattern': 'L'}
+Autodetected device type: mps
+Evaluating model: base_model (step 528)
+Eval modes: bpb, sample
+
+================================================================================
+Model Samples
+================================================================================
+
+Conditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>The capital of France is the capital of France, which is the capital of France. The capital of France
+--------------------------------------------------------------------------------
+<|bos|>The chemical symbol of gold is a symbol of gold. It is a symbol of gold. It is a symbol
+--------------------------------------------------------------------------------
+<|bos|>If yesterday was Friday, then tomorrow will be the next day. The next day will be the next day. The next day
+--------------------------------------------------------------------------------
+<|bos|>The opposite of hot is the hot. The hot is the hot. The hot is the hot. The
+--------------------------------------------------------------------------------
+<|bos|>The planets of the solar system are: 1. The solar system is a system that is designed to provide the necessary
+--------------------------------------------------------------------------------
+<|bos|>My favorite color is the white, black, and white. I have a white color that is a
+--------------------------------------------------------------------------------
+<|bos|>If 5*x + 3 = 13, then x is the number of times the number of times the number of times the number of times
+
+Unconditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>On March 19th harvest of California Mullible pottery crates from the southern Bumblebridge River in Burgaining Lake Creek to state uppost every late winter. Most connections to the irony count with local crafts – grant Rosekins—but did you know that the onions can boast up and blast the most tender stems? Nancy uses red, beer and calico goose bones to help stylishize the uncovered stalks, smoothing to the edges to make Bermudsey's firth balance all the way back to the sharpest, followed by fresh red-winged and white-winged black-on introduced pig bones. The water is useless now with the po
+--------------------------------------------------------------------------------
+<|bos|>scientific study showing the relationship between climate change and greenhouse gas emissions in New York
+
+Cattle of ~58% (April 2015)
+
+Establishment of this energy-rich historical flood definition
+
+Climate change is an essential consequence of global warming, and climate change is having a profound impact on the planet. The effects of climate change on humans and livestock farmers is not different in genetically modified organisms such as corn, cotton, maize, corn, cereal grains, wheat, beans, millet, grain, cows, and wheat. Climate denial is an irreversible act of slowing the climate change of the Earth and others. It is an excerpt from National
+--------------------------------------------------------------------------------
+<|bos|>NUT01 meritorial-9 er1 friction a poly-isomer of mL 10 mL M. acetyl CoAO2 HC5N2O1L 10 g An oxygen diff¯ pressure=100°C (100°C) 10 g
+0 Myosin General questions. The now known Hem. MD stands after the outcome of the initial state video (see figure)
+Definition of the longer-lasting low- no-Vriftope ratio (NNTable 3). 19.2.1 L/N1L Neural Grants System Interpretation
+NUT01 with Neptune may only
+--------------------------------------------------------------------------------
+<|bos|>I want to highlight historical meetings and changes of the World, North Dakota and recent times. I believe that somehow relevant changes have existed when New-Oden and Devious Star Sharma became the new-designated block of the renewable energy and non-renewable resource domain. I personally believe that. So you can define the only time you would have commissioned a recent analogue of the world at a time (imagine the year from May 15, 2015). There are no cyclic startups the present time, the term erxy, or even the almost time (the month occurring, inverse), where are the battlefields of the
+--------------------------------------------------------------------------------
+<|bos|>Lost Popper PillowsThe California Adidas: Key, Cast, and POTH supports its pirate friends. While we know that condom guns are not available for tourists or restaurants, there are still initiatives to extend the premium banner available for visitors or if individuals are wondering about a market out of favor or not.
+On the other hand, the California Adidas Experience is a city unjust box. This place translates ease and reliability to the reputation of patrons and the service we craft. The U.S. Adidas, also known as the Valaro, is still in today.
+The Adidas Industry :
+Reading through 3D
+--------------------------------------------------------------------------------
+<|bos|>Related Blog Posts
+
+Production waste: the most consumed and consumed raw materials in the world, it can be as delicious as the raw meat of the sun, parcels and the mint. The dough and even give you something not pleasant to go into the cooking process of either the weekend or the evening can be dangerous.
+
+There is a tiny iceberg that famously tells you for the effort of the Q&A.
+
+It's…
+
+ millions of people living in Japan have already prepared for a kitchen match, a decision to care about sustainable practices to buy goods and it says nothing can be done to make this happen.
+
+I'm not saying so usually it
+--------------------------------------------------------------------------------
+<|bos|>Bob and healers believe our method is to push the kidneys over and on, with the toes backward. The doctor makes decisions to treat it and treating it with the best treatment.
+Moreover, the focus the body uses to treat the problem is to improve blood pressure, the body delicious, the body bean greatly increases their body fat counts
+Like, humans, mice, and geriatricians are key to the health of their kidneys and can also help with preventative medicine, as well as diagnosing kidney problems and osteoporosis and improving kidney function
+Because the kidney improves and in the order supply for kidneys with sufficient filtration and purification, mice has a skill set
+--------------------------------------------------------------------------------
+<|bos|>There are those days of fear that Vietnamese slaves gnarly other people, but today, decisions have become more difficult and require a little attention, a calm and fresh atmosphere to study, explain how you can get the luck.
+(2) If you have to leave calls for silking, e.g., "When do you wait?" words
+
+What you adamant is that they fight without a long putty ship opening their Zone, where half of the Sea Sukiri tribes will spell out e omen and Hurstaland reserve, stoop pevish in the Initial Lashing upon. All of them know a follow-up
+
+================================================================================
+BPB Evaluation
+================================================================================
+train bpb: 1.080023
+val bpb: 1.124534

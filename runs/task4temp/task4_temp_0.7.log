@@ -1,0 +1,78 @@
+=== temp=0.7 prompt#1 ===
+2026-09-22 23:09:36,609 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:36,609 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:36,655 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: Europe is a marvel of modern engineering, with its rich history and architecture that stretches out after 2015, its history, and cultural heritage. The capital of France is Paris, France, is the history of France, is Paris, France, and France, is famous for its famous landmarks like the Eiffel Tower, Louvre, and Louvre, and Louvre.<|assistant_end|>
+
+=== temp=0.7 prompt#2 ===
+2026-09-22 23:09:38,287 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:38,288 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:38,339 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: There are several reasons why the sky is blue in one sentence. The colors are naturally blue in another sentence. The blue in one sentence includes a blue in one sentence that is blue in the other. In the first sentence, it's a different sentence that's blue in the other sentence, and the blue in other sentences, while the blue in the other sentence, as it's a red brown in the other sentence. The green in the other sentence is that blue in the other sentence is a red sentence that's blue in the other sentence is a red sentence that's blue in the other sentence. The blue in the other sentence, the blue in the other sentence, is a red sentence that's blue in the other sentence.
+
+The blue in the other sentence is a red sentence that's blue in the other sentence. The red sentence is a red sentence that's blue in the other sentence is a red sentence that's blue in the other sentence. The blue in the other sentence is a red sentence that's blue in the other sentence is red.<|assistant_end|>
+
+=== temp=0.7 prompt#3 ===
+2026-09-22 23:09:40,408 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:40,408 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:40,457 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: Ryan, a golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden ir golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden ir golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden golden
+
+=== temp=0.7 prompt#4 ===
+2026-09-22 23:09:42,674 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:42,674 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:42,721 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: Let's start by rewriting the first element of the first element of the second element of the third element of the first element of the first element of the second element of the second element of the second element of the second element of the third element of the second element of the second element of the third element of the second element of the third element of the second element of the third element of the second element of the second element of the third element of the third element of the second element of the third element of the fourth element of the second element of the third element of the third element of the second element of the third element of the third element of the fourth element of the third element of the fourth element of the third element of the second element of the third element of the third element of the third element of the second element of the fourth element of the second element of the fourth element of the third element of the third element of the third element of the third element of the last third element of the third element of the third element of the fourth element of the third element of the third element of the fourth element of the second element of the third element of the third element of the third element of the fourth element of the third element of the third element of the third element of the
+
+=== temp=0.7 prompt#5 ===
+2026-09-22 23:09:44,984 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:44,984 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:45,033 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: One idea is to set a weekend getaway or a weekend getaway is to say that weekend getaway is to set up a weekend getaway. This weekend getaway is to set up a weekend getaway or a weekend getaway is to set up a weekend getaway. 
+
+Another idea is to set up a weekend getaway or a weekend getaway in getaway. This weekend getaway is to set up a weekend getaway or a weekend getaway it out a weekend getaway. This weekend getaway is a weekend getaway or a weekend getaway, a weekend getaway it from weekend getaway.
+
+We also set up a weekend getaway or a weekend getaway from weekend getaway. This weekend getaway is a weekend getaway, a weekend getaway getaway from weekend getaway or a weekend getaway from weekend getaway from weekend getaway or a weekend getaway from weekend getaway. This weekend getaway is more than weekend getaway.
+
+Alternatively, we could create a weekend getaway from weekend getaway or a weekend getaway. This weekend getaway is a weekend getaway from weekend getaway from weekend getaway from weekend getaway from weekend getaway from weekend getaway from weekend getaway from weekend getaway from weekend get
+

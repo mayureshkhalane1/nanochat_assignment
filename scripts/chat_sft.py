@@ -64,6 +64,10 @@ parser.add_argument("--chatcore-max-sample", type=int, default=24, help="max pro
 # Data mixture
 parser.add_argument("--mmlu-epochs", type=int, default=3, help="number of epochs of MMLU in training mixture (teaches Multiple Choice)")
 parser.add_argument("--gsm8k-epochs", type=int, default=4, help="number of epochs of GSM8K in training mixture (teaches Math and Tool Use)")
+# Staged training
+parser.add_argument("--stage", type=str, default="full", choices=["mid", "sft", "full"], help="training stage: mid = MMLU+GSM8K only (Stage 1), sft = SmolTalk only (Stage 2), full = original mixture")
+parser.add_argument("--source", type=str, default="base", choices=["base", "sft"], help="which checkpoint source to load from: base = pretrained, sft = previous SFT checkpoint")
+parser.add_argument("--save-tag", type=str, default=None, help="checkpoint dir name under chatsft_checkpoints (default: d<depth>)")
 args = parser.parse_args()
 user_config = vars(args).copy()
 # -----------------------------------------------------------------------------
@@ -91,7 +95,7 @@ if not HAS_FA3:
     print0("WARNING: Flash Attention 3 not available, using PyTorch SDPA fallback. Training will be less efficient.")
 
 # Load the model and tokenizer
-model, tokenizer, meta = load_model("base", device, phase="train", model_tag=args.model_tag, step=args.model_step)
+model, tokenizer, meta = load_model(args.source, device, phase="train", model_tag=args.model_tag, step=args.model_step)
 
 # Inherit training hyperparameters from pretrained checkpoint (None = inherit, explicit value = override)
 pretrain_user_config = meta.get("user_config", {})
@@ -113,6 +117,12 @@ for name, fallback, source in [
         print0(f"NOTE: --{name.replace('_', '-')}={arg_val} overrides pretrained value of {pretrain_val}")
     else:
         print0(f"Using {name}={arg_val}")
+
+# Persist the resolved hyperparameters into user_config so that a subsequent stage
+# (loaded from this checkpoint's meta) inherits the exact same values instead of
+# falling back to script defaults or None.
+for name in ["max_seq_len", "device_batch_size", "total_batch_size", "embedding_lr", "unembedding_lr", "matrix_lr"]:
+    user_config[name] = getattr(args, name)
 
 orig_model = model
 model = torch.compile(model, dynamic=False)
@@ -137,7 +147,7 @@ optimizer = model.setup_optimizer(unembedding_lr=args.unembedding_lr, embedding_
 # restore our fresh SFT LRs after loading.
 base_dir = get_base_dir()
 if args.load_optimizer:
-    optimizer_data = load_optimizer_state("base", device, rank=ddp_rank, model_tag=args.model_tag, step=args.model_step)
+    optimizer_data = load_optimizer_state(args.source, device, rank=ddp_rank, model_tag=args.model_tag, step=args.model_step)
     if optimizer_data is not None:
         base_lrs = [group["lr"] for group in optimizer.param_groups]
         optimizer.load_state_dict(optimizer_data)
@@ -159,13 +169,25 @@ for group in optimizer.param_groups:
     group["initial_lr"] = group["lr"]
 
 # SFT data mixture and DataLoader
-train_tasks = [
-    SmolTalk(split="train"), # 460K rows of general conversations
-    *[MMLU(subset="all", split="auxiliary_train") for _ in range(args.mmlu_epochs)], # 100K rows per epoch
-    *[GSM8K(subset="main", split="train") for _ in range(args.gsm8k_epochs)], # 8K rows per epoch
-]
+def build_train_tasks(args):
+    # Stage 1 (mid-training): reasoning + knowledge only
+    if args.stage == "mid":
+        return [
+            *[MMLU(subset="all", split="auxiliary_train") for _ in range(args.mmlu_epochs)], # 100K rows per epoch
+            *[GSM8K(subset="main", split="train") for _ in range(args.gsm8k_epochs)], # 8K rows per epoch
+        ]
+    # Stage 2 (SFT): conversational only
+    if args.stage == "sft":
+        return [SmolTalk(split="train")] # 460K rows of general conversations
+    # full: everything
+    return [
+        SmolTalk(split="train"), # 460K rows of general conversations
+        *[MMLU(subset="all", split="auxiliary_train") for _ in range(args.mmlu_epochs)], # 100K rows per epoch
+        *[GSM8K(subset="main", split="train") for _ in range(args.gsm8k_epochs)], # 8K rows per epoch
+    ]
+train_tasks = build_train_tasks(args)
 train_dataset = TaskMixture(train_tasks)
-print0(f"Training mixture: {len(train_dataset):,} rows (MMLU x{args.mmlu_epochs}, GSM8K x{args.gsm8k_epochs})")
+print0(f"Training mixture ({args.stage}): {len(train_dataset):,} rows")
 val_dataset = TaskMixture([
     SmolTalk(split="test"), # 24K rows in test set
     MMLU(subset="all", split="test", stop=5200), # 14K rows in test set, use only 5.2K to match the train ratios
@@ -390,7 +412,7 @@ while True:
 
     # save checkpoint at the end of the run (all ranks participate so each saves its optimizer shard)
     if last_step:
-        output_dirname = args.model_tag if args.model_tag else f"d{depth}" # e.g. d12
+        output_dirname = args.save_tag if args.save_tag else f"d{depth}" # e.g. d12
         checkpoint_dir = os.path.join(base_dir, "chatsft_checkpoints", output_dirname)
         save_checkpoint(
             checkpoint_dir,
@@ -400,6 +422,9 @@ while True:
             {
                 "step": step,
                 "val_bpb": val_bpb, # loss at last step
+                "max_seq_len": args.max_seq_len,
+                "device_batch_size": args.device_batch_size,
+                "total_batch_size": args.total_batch_size,
                 "model_config": {
                     "sequence_len": args.max_seq_len,
                     "vocab_size": tokenizer.get_vocab_size(),

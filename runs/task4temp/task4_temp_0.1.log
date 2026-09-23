@@ -1,0 +1,78 @@
+=== temp=0.1 prompt#1 ===
+2026-09-22 23:09:24,222 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:24,222 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:24,264 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: The capital of France is Paris. The capital of France is Paris. Paris is a Paris city known for its famous landmarks, including the Paris Museum of Paris, the Paris Museum of Paris, the Paris Museum of Paris, and the Paris Museum of Paris.
+
+The Paris Museum of Paris is the Paris Museum of Paris, which is the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris.
+
+The Paris Museum of Paris is the Paris Museum of Paris, which is the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris.
+
+The Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of Paris, and the Paris Museum of
+
+=== temp=0.1 prompt#2 ===
+2026-09-22 23:09:26,593 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:26,593 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:26,643 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: The sky is blue in one sentence. The sky is blue in one sentence is a bit blue in one sentence, and the sky is blue in one sentence. The sky is blue in one sentence is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence. The sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue in one sentence, and the sky is blue
+
+=== temp=0.1 prompt#3 ===
+2026-09-22 23:09:29,336 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:29,336 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:29,380 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: The ocean's eerie silence, a haunting melody that's both exhilarating and terrifying. The ocean's eerie silence, the ocean's unsettling silence, the ocean's unsettling silence. The ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence. The ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence. The ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence, the ocean's unsettling silence.<|assistant_end|>
+
+=== temp=0.1 prompt#4 ===
+2026-09-22 23:09:31,399 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:31,399 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:31,446 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: In addition to the two words, the two words are distinct concepts in mathematics, but they are not distinct concepts.
+
+**In addition to the two words**, the two words are distinct concepts in mathematics, such as the number of words, numbers, and number of words. In other words, the two words are distinct concepts in mathematics, such as "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and "infinite" and
+
+=== temp=0.1 prompt#5 ===
+2026-09-22 23:09:33,767 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-09-22 23:09:33,767 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /Users/mayureshkhalane/.cache/nanochat/chatsft_checkpoints/d2_sft with step 2868
+2026-09-22 23:09:33,816 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 2, 'n_head': 1, 'n_kv_head': 1, 'n_embd': 128, 'window_pattern': 'L'}
+Autodetected device type: mps
+
+NanoChat Interactive Mode
+--------------------------------------------------
+Type 'quit' or 'exit' to end the conversation
+Type 'clear' to start a new conversation
+--------------------------------------------------
+
+Assistant: Imagine a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend, a weekend,
+
