@@ -4,6 +4,30 @@ Commands run for each task. Effective hyper-parameters match the `user_config`
 written into each checkpoint's `meta_*.json` (see [`checkpoints/`](checkpoints/)).
 Run logs are in [`runs/`](runs/).
 
+## Task 0 - Model Hub warm-up
+
+Report section: `\S5.4` of the assignment. For each model we recorded training
+tokens/steps, architecture (layers, hidden dim, heads, params), and training
+data, noting the source for every field:
+
+| Field | OLMo-1B | SmolLM2-360M | Qwen2.5-0.5B | Source |
+|---|---|---|---|---|
+| Training tokens | ~2 T (paper) / 3 T (card) | 4 T | up to 18 T (series) | paper / model card |
+| Layers | 16 | 32 | 24 | `config.json` |
+| Hidden dim | 2048 | 960 | 896 | `config.json` |
+| Attention heads | 16 (MHA) | 15 (GQA, 5 KV) | 14 (GQA, 2 KV) | `config.json` |
+| Params | ~1.2 B | 0.4 B | 0.49 B | paper / `config.json` |
+| Context | 2048 | 8192 | 32768 | `config.json` |
+| Vocab | 50280 | 49152 | 151936 | `config.json` |
+| Data | Dolma | FineWeb-Edu, DCLM, The Stack mix | web + math/code + synthetic | paper / model card |
+
+All three are decoder-only causal transformers. Notes recorded in the report:
+- OLMo-1B: architecture from `config.json`; the paper reports 2 T tokens while
+  the model card later claims 3 T - a discrepancy worth noting.
+- SmolLM2-360M: Llama-style `config.json`; 4 T token count and data mix from paper.
+- Qwen2.5-0.5B: `config.json` shows 24 layers, GQA 14 Q/2 KV heads, large
+  151,936 vocab; 18 T is the series maximum, not per-model.
+
 ## Task 1 - Tokenization (`vocab` 8,192 and 32,768)
 
 ```bash
