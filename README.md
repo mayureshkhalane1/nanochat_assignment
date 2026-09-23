@@ -17,6 +17,35 @@ CLIMBMix train split, saves it under `~/.cache/nanochat/task1/vocab{size}/` (so 
 shared pretraining tokenizer is never overwritten), and emits compression /
 sequence-length / failure-case measurements in `summary.json`.
 
+### Teammate's Task 1 additions
+
+Additional Task 1 scripts, committed in `b09fc2e`/`b45aa8b`/`e5b06c4`/`33503a4`.
+`runs/tokenizer.sh` drives the whole flow: train both vocab sizes with the
+upstream `scripts.tok_train`, snapshot each tokenizer to
+`~/.cache/nanochat/tokenizer_{8192,32768}`, then run the evals below:
+
+```bash
+python -m scripts.tok_train --vocab-size 8192        # then 32768
+cp -r ~/.cache/nanochat/tokenizer ~/.cache/nanochat/tokenizer_8192
+python -m scripts.tok_eval                           # compression comparison
+python -m scripts.tok_artifacts --text "1,586,291 people live in country 224393."
+python -m scripts.tok_artifacts --text $'def hello_world():\n    print(\'Hello, world!\')\nhello_world()'
+python -m scripts.tok_artifacts --text "Hola, ¿cómo estás?"
+python -m scripts.tok_artifacts --text "정직한 사실 위에, 공정한 시선을 더하다"
+```
+
+- `scripts/tok_eval.py`: compares our tokenizer's compression (bytes/tokens
+  ratio, plus the added `tok_per_char` metric) against GPT-2 and GPT-4 (cl100k)
+  tokenizers on fixed news / Korean / code / math / science / CLIMBMix-train/val
+  snippets.
+- `scripts/tok_artifacts.py`: tokenizes a probe text and prints each token's
+  id + decoded fragment, used to inspect failure cases for numbers, source code,
+  and non-English text.
+
+Note: his flow trains into the shared `~/.cache/nanochat/tokenizer` and only then
+snapshots a copy; ours trains into per-vocab dirs directly and never touches the
+shared tokenizer. Both cover vocab 8,192 and 32,768.
+
 ## Task 2 - Pretraining (`depth 2`, comparison at depth 4 and 8)
 
 ```bash
