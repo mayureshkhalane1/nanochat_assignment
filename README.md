@@ -29,24 +29,7 @@ All three are decoder-only causal transformers. Notes recorded in the report:
   151,936 vocab; 18 T is the series maximum, not per-model.
 
 ## Task 1 - Tokenization (`vocab` 8,192 and 32,768)
-
-```bash
-.venv/bin/python -m scripts.tok_task1 --vocab-size 8192   --max-chars 500000000
-.venv/bin/python -m scripts.tok_task1 --vocab-size 32768 --max-chars 500000000
-.venv/bin/python scripts/tok_mergetree.py unhappiness   # merge-tree illustration with counts
-```
-
-`scripts/tok_task1.py` trains a rustbpe tokenizer on a 500 MB sample of the
-CLIMBMix train split, saves it under `~/.cache/nanochat/task1/vocab{size}/` (so the
-shared pretraining tokenizer is never overwritten), and emits compression /
-sequence-length / failure-case measurements in `summary.json`.
-
-### Teammate's Task 1 additions
-
-Additional Task 1 scripts, committed in `b09fc2e`/`b45aa8b`/`e5b06c4`/`33503a4`.
-`runs/tokenizer.sh` drives the whole flow: train both vocab sizes with the
-upstream `scripts.tok_train`, snapshot each tokenizer to
-`~/.cache/nanochat/tokenizer_{8192,32768}`, then run the evals below:
+`runs/tokenizer.sh` runs the whole flow for Task 1 for both vocab sizes. This scripts runs the following commands:
 
 ```bash
 python -m scripts.tok_train --vocab-size 8192        # then 32768
@@ -62,13 +45,9 @@ python -m scripts.tok_artifacts --text "정직한 사실 위에, 공정한 시�
   ratio, plus the added `tok_per_char` metric) against GPT-2 and GPT-4 (cl100k)
   tokenizers on fixed news / Korean / code / math / science / CLIMBMix-train/val
   snippets.
-- `scripts/tok_artifacts.py`: tokenizes a probe text and prints each token's
+- `scripts/tok_artifacts.py`: tokenizes a given text and prints each token's
   id + decoded fragment, used to inspect failure cases for numbers, source code,
   and non-English text.
-
-Note: his flow trains into the shared `~/.cache/nanochat/tokenizer` and only then
-snapshots a copy; ours trains into per-vocab dirs directly and never touches the
-shared tokenizer. Both cover vocab 8,192 and 32,768.
 
 ## Task 2 - Pretraining (`depth 2`, comparison at depth 4 and 8)
 
